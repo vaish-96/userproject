@@ -1,0 +1,17 @@
+!<!DOCTYPE html>
+{% extends "testapp/base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
+<div class="container">
+<form action="{% url 'testapp:login' %}" method="post">
+  {%csrf_token%}
+  <h1>Login here</h1>
+  <label for="username">username</label>
+  <input type="text" name="username" placeholder="Username">
+  <<label for="password">password</label>
+  <input type="password" name="password" placeholder="Password">
+  <input type="Submit" name="" value="Login">
+</form>
+</div>
+{% endblock %}
