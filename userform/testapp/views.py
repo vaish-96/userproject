@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from testapp.forms import UserForm
 from testapp.forms import UserProfileInfoforms
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate,login,logout
@@ -17,7 +17,7 @@ def index(request):
 @login_required
 def userlogout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return redirect('/')
 
 def register(request):
     registered = False
@@ -60,7 +60,10 @@ def userlogin(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('index'))
+                return redirect('/master/form')
+                # return HttpResponseRedirect(reverse('index'))
+                # return HttpResponse("succesfully logged in")
+                # return render(request,'testapp1/form.html')
             else:
                 return HttpResponse("Account Not Active")
         else:

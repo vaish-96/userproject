@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form action="/master/update-work/{{ work.id }}" method="post">
+    {% csrf_token %}
+    <label for="types">Name:<input type="text" name="name" value="{{work.name}}" placeholder="{{work.name}}"></label>
+    <label for="workshift">Work Shift:<input type="text" name="workshift" value="{{work.workshift}}" placeholder="{{work.workshift}}"></label>
+    <label for="fro">From:<input type="number" name="fro" value="{{work.fro}}" placeholder="{{work.fro}}"></label>
+    <label for="to">To:<input type="number" name="to" value="{{work.to}}" placeholder="{{work.to}}"></label>
+
+    <input type="Submit" value="Update">
+  </form>
+  </body>
+</html>

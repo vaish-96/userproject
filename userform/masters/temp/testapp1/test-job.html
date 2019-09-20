@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/master/create-job/" method="post">
+      {% csrf_token %}
+      <label for="name">Name:<input type="text" name="name" id="name"></label>
+      <label for="jobcategory">Job Category:<input type="text" name="jobcategory" id="jobcategory"></label>
+      <input type="Submit" value="Create">
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>Job Category</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cat in cats %}
+        <tr>
+        <td>{{ cat.name }}</td>
+        <td>{{ cat.jobcategory }}</td>
+        <td><a href="/master/edit-job/{{ cat.id }}">Edit</a> <a href="/master/delete-job/{{ cat.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

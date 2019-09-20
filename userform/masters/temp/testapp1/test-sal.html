@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/master/create-sal/" method="post">
+      {% csrf_token %}
+      <label for="name">Name:<input type="text" name="name" id="name"></label>
+      <label for="component_name">Component Name:<input type="text" name="component_name" id="component_name"></label>
+      <label for="types">Type:<input type="text" name="types" id="types"></label>
+      <input type="Submit" value="Create">
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>Component Name</th>
+        <th>Type</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sal in sals %}
+        <tr>
+        <td>{{ sal.name }}</td>
+        <td>{{ sal.component_name }}</td>
+        <td>{{ sal.types }}</td>
+        <td><a href="/master/edit-sal/{{ sal.id }}">Edit</a> <a href="/master/delete-sal/{{ sal.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

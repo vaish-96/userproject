@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="create/" method="post">
+      {% csrf_token %}
+      <label for="name">Name:<input type="text" name="name" id="name"></label>
+      <label for="jobtitle">Job Title:<input type="text" name="jobtitle" id="jobtitle"></label>
+      <label for="jobdescription">Job Description:<input type="text" name="jobdescription" id="jobdescription"></label>
+      <input type="Submit" value="Create">
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>Job Title</th>
+        <th>Job Description</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr>
+        <td>{{ job.name }}</td>
+        <td>{{ job.jobtitle }}</td>
+        <td>{{ job.jobdescription }}</td>
+        <td>{{ job.created_at }}</td>
+        <td>{{ job.updated_at }}</td>
+        <td><a href="edit/{{ job.id }}">Edit</a> <a href="delete/{{ job.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

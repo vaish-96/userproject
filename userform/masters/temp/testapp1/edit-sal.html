@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form action="/master/update-sal/{{ sal.id }}" method="post">
+    {% csrf_token %}
+    <label for="types">Name:<input type="text" name="name" value="{{sal.name}}" placeholder="{{sal.name}}"></label>
+    <label for="component_name">Component Name:<input type="text" name="component_name" value="{{sal.component_name}}" placeholder="{{sal.component_name}}"></label>
+    <label for="types">Type:<input type="text" name="types" value="{{sal.types}}" placeholder="{{sal.types}}"></label>
+    <input type="Submit" value="Update">
+  </form>
+  </body>
+</html>

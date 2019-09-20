@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form action="/master/update-pay/{{ pay.id }}" method="post">
+    {% csrf_token %}
+    <label for="paygrade">Pay Grade:<input type="text" name="paygrade" value="{{pay.paygrade}}" placeholder="{{pay.paygrade}}"></label>
+    <label for="currency">Currency:<input type="number" name="currency" value="{{pay.currency}}" placeholder="{{pay.currency}}"></label>
+    <input type="Submit" value="Update">
+  </form>
+  </body>
+</html>

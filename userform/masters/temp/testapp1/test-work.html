@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/master/create-work/" method="post">
+      {% csrf_token %}
+      <label for="name">Name:<input type="text" name="name" id="name"></label>
+      <label for="workshift">Work Shift:<input type="text" name="workshift" id="workshift"></label>
+      <label for="fro">From:<input type="number" name="fro" id="fro"></label>
+      <label for="to">To:<input type="number" name="to" id="to"></label>
+
+      <input type="Submit" value="Create">
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>Work Shift</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for work in works %}
+        <tr>
+        <td>{{ work.name }}</td>
+        <td>{{ work.workshift }}</td>
+        <td>{{ work.fro }}</td>
+        <td>{{ work.to }}</td>
+        <td><a href="/master/edit-work/{{ work.id }}">Edit</a> <a href="/master/delete-work/{{ work.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

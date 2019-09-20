@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form action="/master/update/{{ job.id }}" method="post">
+    {% csrf_token %}
+    <label for="jobtitle">Job Name:<input type="text" name="name" value="{{job.name}}" placeholder="{{job.name}}"></label>
+    <label for="jobtitle">Job Title:<input type="text" name="jobtitle" value="{{job.jobtitle}}" placeholder="{{job.jobtitle}}"></label>
+    <label for="jobdescription">Job Description:<input type="text" name="jobdescription" value="{{job.jobdescription}}" placeholder="{{job.jobdescription}}"></label>
+    <input type="Submit" value="Update">
+  </form>
+  </body>
+</html>

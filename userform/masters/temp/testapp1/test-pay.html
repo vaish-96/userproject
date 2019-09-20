@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/master/create-pay/" method="post">
+      {% csrf_token %}
+      <label for="paygrade">Pay Grade:<input type="text" name="paygrade" id="paygrade"></label>
+      <label for="currency">Currency:<input type="number" name="currency" id="currency"></label>
+      <input type="Submit" value="Create">
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Pay Grade</th>
+        <th>Currency</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pay in pays %}
+        <tr>
+        <td>{{ pay.paygrade }}</td>
+        <td>{{ pay.currency }}</td>
+        <td><a href="/master/edit-pay/{{ pay.id }}">Edit</a> <a href="/master/delete-pay/{{ pay.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
