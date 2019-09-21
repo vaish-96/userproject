@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form action="/master/update-status/{{ status.id }}" method="post">
+    {% csrf_token %}
+    <label for="name">Name:<input type="text" name="name" value="{{status.name}}" placeholder="{{status.name}}"></label>
+    <label for="employment_status">Employee Status:<input type="text" name="employment_status" value="{{status.employment_status}}" placeholder="{{status.employment_status}}"></label>
+    <input type="Submit" value="Update">
+  </form>
+  </body>
+</html>

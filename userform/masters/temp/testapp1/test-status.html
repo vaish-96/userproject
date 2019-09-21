@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/master/create-status/" method="post">
+      {% csrf_token %}
+      <label for="name">Name:<input type="text" name="name" id="name"></label>
+      <label for="employment_status">Employment Status:<input type="text" name="employment_status" id="employment_status"></label>
+      <input type="Submit" value="Create">
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Name</th>
+        <th>Employment Status</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for status in statuss %}
+        <tr>
+        <td>{{ status.name }}</td>
+        <td>{{ status.employment_status }}</td>
+        <td><a href="/master/edit-status/{{ status.id }}">Edit</a> <a href="/master/delete-status/{{ status.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

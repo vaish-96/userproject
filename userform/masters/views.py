@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render,redirect
-from .models import Job,Salary,Job_category,Work_shift,Pay_grade
+from .models import Job,Salary,Job_category,Work_shift,Pay_grade,Employment_status
 
 # Create your views here.
 def form(request):
@@ -104,11 +104,33 @@ def delete_job(request, id):
 #############################################################################
 #    EMPLOYMENT STATUS                                                      #                                                 #
 #############################################################################
+def index_status(request):
+    statuss = Employment_status.objects.all()
+    context = {'statuss':statuss}
+    return render(request,'testapp1/test-status.html',context)
 
-# def Employment_status(request):
-#     emp = Employment_status.objects.all()
-#     context = {'emp':emp}
-#     return render(request,'testapp1/emp.html',context)
+def edit_status(request, id):
+    status = Employment_status.objects.get(id=id)
+    context = {'status':status}
+    return render(request,'testapp1/edit-status.html',context)
+
+def create_status(request):
+    # print request.POST
+    status = Employment_status(name=request.POST['name'],employment_status=request.POST['employment_status'])
+    status.save()
+    return redirect('/master/test-status')
+
+def update_status(request, id):
+    status = Employment_status.objects.get(id=id)
+    status.name = request.POST['name']
+    status.employment_status = request.POST['employment_status']
+    status.save()
+    return redirect('/master/test-status')
+
+def delete_status(request, id):
+    status = Employment_status.objects.get(id=id)
+    status.delete()
+    return redirect('/master/test-status')
 
 ############################################################################
 # WORK SHIFTS                                                                         #
@@ -125,7 +147,6 @@ def edit_work(request, id):
     return render(request,'testapp1/edit-work.html',context)
 
 def create_work(request):
-    # print request.POST
     work = Work_shift(name=request.POST['name'],
                       workshift=request.POST['workshift'],
                       fro=request.POST['fro'],

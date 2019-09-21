@@ -36,5 +36,11 @@ urlpatterns = [
     path('create-pay/',views.create_pay,name='create-pay'),
     path('update-pay/<id>',views.update_pay,name='update-pay'),
     path('delete-pay/<id>',views.delete_pay,name='delete-pay'),
+
+    path('test-status/',views.index_status,name='test-status'),
+    path('edit-status/<id>',views.edit_status,name='edit-status'),
+    path('create-status/',views.create_status,name='create-status'),
+    path('update-status/<id>',views.update_status,name='update-status'),
+    path('delete-status/<id>',views.delete_status,name='delete-status'),
     
 ]
