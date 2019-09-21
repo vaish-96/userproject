@@ -7,8 +7,8 @@ from .models import Job,Salary,Job_category,Work_shift,Pay_grade,Employment_stat
 def form(request):
     return render(request,'testapp1/form.html')
 
-def employee(request):
-    return render(request,'testapp1/emp.html')
+# def employee(request):
+#     return render(request,'testapp1/emp.html')
 
 def index1(request):
     jobs = Job.objects.all()
