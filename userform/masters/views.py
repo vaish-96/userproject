@@ -38,6 +38,7 @@ def delete(request, id):
     job = Job.objects.get(id=id)
     job.delete()
     return redirect('/master')
+
 ################################################################################
 # SALARIES                                                                     #
 ################################################################################
@@ -71,7 +72,7 @@ def delete_sal(request, id):
     return redirect('/master/test-sal')
 
 ##############################################################################
-#                     JOB CATAGORIES                                                       #
+#                     JOB CATAGORIES                                         #
 ##############################################################################    
 def index_job(request):
     cats = Job_category.objects.all()
@@ -133,7 +134,7 @@ def delete_status(request, id):
     return redirect('/master/test-status')
 
 ############################################################################
-# WORK SHIFTS                                                                         #
+# WORK SHIFTS                                                              #
 ############################################################################
 
 def index_work(request):
@@ -169,7 +170,7 @@ def delete_work(request, id):
     return redirect('/master/test-work')
 
 ############################################################################
-# PAY GRADES                                                                         #
+# PAY GRADES                                                               #
 ############################################################################
 
 def index_pay(request):
