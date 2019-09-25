@@ -7,6 +7,10 @@ urlpatterns = [
 
     path('',views.index1,name='master'),
     path('form/',views.form,name='form'),
+<<<<<<< HEAD
+=======
+#     path('emp/',views.employee,name='employee'),
+>>>>>>> d1a5dc5693119cd80b578cde3378f111ca26c033
     path('edit/<id>',views.edit,name='edit'),
     path('create/',views.create,name='create'),
     path('update/<id>',views.update,name='update'),

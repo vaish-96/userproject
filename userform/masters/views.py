@@ -7,6 +7,12 @@ from .models import Job,Salary,Job_category,Work_shift,Pay_grade,Employment_stat
 def form(request):
     return render(request,'testapp1/form.html')
 
+<<<<<<< HEAD
+=======
+# def employee(request):
+#     return render(request,'testapp1/emp.html')
+
+>>>>>>> d1a5dc5693119cd80b578cde3378f111ca26c033
 def index1(request):
     jobs = Job.objects.all()
     context = {'jobs':jobs}
@@ -70,7 +76,7 @@ def delete_sal(request, id):
     return redirect('/master/test-sal')
 
 ##############################################################################
-#                     JOB CATAGORIES                                                       #
+#                     JOB CATAGORIES                                         #
 ##############################################################################    
 
 def index_job(request):
@@ -133,7 +139,7 @@ def delete_status(request, id):
     return redirect('/master/test-status')
 
 ############################################################################
-# WORK SHIFTS                                                                         #
+# WORK SHIFTS                                                              #
 ############################################################################
 
 def index_work(request):
@@ -169,7 +175,7 @@ def delete_work(request, id):
     return redirect('/master/test-work')
 
 ############################################################################
-# PAY GRADES                                                                         #
+# PAY GRADES                                                               #
 ############################################################################
 
 def index_pay(request):
