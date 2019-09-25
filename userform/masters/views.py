@@ -7,9 +7,6 @@ from .models import Job,Salary,Job_category,Work_shift,Pay_grade,Employment_stat
 def form(request):
     return render(request,'testapp1/form.html')
 
-def employee(request):
-    return render(request,'testapp1/emp.html')
-
 def index1(request):
     jobs = Job.objects.all()
     context = {'jobs':jobs}
@@ -38,9 +35,11 @@ def delete(request, id):
     job = Job.objects.get(id=id)
     job.delete()
     return redirect('/master')
+
 ################################################################################
 # SALARIES                                                                     #
 ################################################################################
+
 def index_sal(request):
     sals = Salary.objects.all()
     context = {'sals':sals}
@@ -73,6 +72,7 @@ def delete_sal(request, id):
 ##############################################################################
 #                     JOB CATAGORIES                                                       #
 ##############################################################################    
+
 def index_job(request):
     cats = Job_category.objects.all()
     context = {'cats':cats}

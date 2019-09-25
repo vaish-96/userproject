@@ -27,7 +27,7 @@ def register(request):
         profileform = UserProfileInfoforms(data=request.POST)
 
         if userform.is_valid() and profileform.is_valid():
-            user =userform.save()
+            user = userform.save()
             user.set_password(user.password)
             user.save()
 

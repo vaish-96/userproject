@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+      <div class="jumbotron">
+         <h2><b>Personal Details</b></h2><br>
+         <form action="" enctype="multipart/form-data" method="POST">
+           {% csrf_token %}
+          
+          <p><label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value="" required><br>
+          </p> 
+
+          <p><label for="middle_name">Middle Name:</label>
+              <input type="text" name="middle_name" value="" required>
+          </p>
+
+          <p><label for="last_name">Last Name:</label>
+              <input type="text" name="last_name"  value="" required>
+          </p>
+          
+          <p><label for="employee_id">Employee ID:</label>
+            <input type="text" name="employee_id"  value="" required> 
+          </p>
+          <p><label for="date_of_birth">Date Of Birth:</label>
+              <input type="date" name="date_of_birth"  id="date_of_birth" value=""> 
+          </p>
+          <p>
+          <table>
+            <tr>
+              <td>Marital Status:</td>
+              <td>
+                <select name="marital_status">
+                  <option value="">Select</option>
+                  <option value="1">Married</option>
+                  <option value="2">Single</option>
+                  <option value="3">Other</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          </p>
+          <p>
+          <table>
+            <tr>
+              <td>Gender:</td>
+              <td>
+                  <select name="gender">
+                      <option value="">Select</option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                    </select>
+              </td>
+            </tr>
+          </table>
+          </p>
+          <p>
+          <table>
+             <tr>
+                <td>Nationality:</td>
+                <td>
+                    <select name="nationality">
+                        <option value="">Select</option>
+                        <option value="1">Indian</option>
+                        <option value="2">USA</option>
+                        <option value="3">UAE</option>
+                      </select>
+                </td>
+              </tr>
+            </table>
+            </p>
+            <p>
+              <label for="nick_name">Nick Name:</label>
+                <input type="text" name="nick_name" id="nick_name" value="">
+            </p>
+
+          <p><label for="aadhar_card_no">Aadhar Card No:</label>
+            <input type="number" name="aadhar_card_no" id="aadhar_card_no" value="">
+          </p>
+          <p>
+            <input type="submit" name="btn btn-primary" value="Next"></b>
+          </p>
+         </form>
+     </div>
+    </div>
+  </body>
+</html>

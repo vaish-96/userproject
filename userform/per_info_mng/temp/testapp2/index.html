@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <form>
+        <a class="btn" href="/index/info/">Add</a>
+        <!-- <input type="Submit" value="Add"> -->
+      </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Job Title</th>
+        <th>Employment Status</th>
+        <th>Location</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for personal in personals %}
+        <tr>
+        <td>{{ personal.employee_id  }}</td>
+        <td>{{ personal.first_name }}</td>
+        <td>{{ employee.job_title }}</td>
+        <td>{{ employee.employement_status }}</td>
+        <td>{{ personal.nationality }}</td>
+        <td><a href="edit/{{ personal.id }}">Edit</a> <a href="delete/{{ personal.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</form>
+  </body>
+</html>

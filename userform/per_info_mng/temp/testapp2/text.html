@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+      <div class="jumbotron">
+         <h2><b>Employment Details</b></h2><br>
+         <form action="" enctype="multipart/form-data" method="POST">
+           {% csrf_token %}
+          <p><label for="joined_date">Joined Date:</label>
+              <input type="date" name="joined_date"  value=""> 
+          </p>
+          <p><label for="date_of_permanency">Date Of Permanency:</label>
+            <input type="date" name="date_of_permanency"  value=""> 
+          </p>
+          <p>
+          <table>
+            <tr>
+              <td>Job Title:</td>
+              <td>
+                <select name="job_title">
+                  <option value="">Select</option>
+                  <option value="1">Front End Developer</option>
+                  <option value="2">Management Trainee</option>
+                  <option value="3">HR Admin</option>
+                </select>
+              </td>
+            </tr>
+            </table>
+            </p>
+              <p>
+              <table>
+                <tr>
+                  <td>Employeement Status:</td>
+                  <td>
+                    <select name="employement_status">
+                      <option value="">Select</option>
+                      <option value="1">Freelance</option>
+                      <option value="2">Full-Time Contract</option>
+                      <option value="3">Full-Time Permanent</option>
+                      <option value="4">Full-Time Probation</option>
+                      <option value="5">Part-Time Contract</option>
+                      <option value="6">Part-Time Internship</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+              </p>
+              <p>
+          <table>
+            <tr>
+              <td>Job Category:</td>
+              <td>
+                <select name="job_category">
+                  <option value="">Select</option>
+                  <option value="1">Technical Officer</option>
+                  <option value="2">Technicians</option>
+                </select>
+              </td>
+            </tr>
+            </table>
+            </p>
+          <p>
+          <table>
+            <tr>
+              <td>Work Shift:</td>
+              <td>
+                <select name="work_shifts">
+                  <option value="">Select</option>
+                  <option value="1">General</option>
+                  <option value="2">Twilight</option>
+                </select>
+              </td>
+            </tr>
+            </table>
+            </p>  
+          <p>
+          <input type="submit" name="btn btn-primary" value="Create">
+         </form>
+     </div>
+    </div>
+  </body>
+</html>

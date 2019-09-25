@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR2 = os.path.join(BASE_DIR,'per_info_mng/temp')
 TEMPLATE_DIR1 = os.path.join(BASE_DIR,'masters/temp')
 TEMPLATE_DIR = os.path.join(BASE_DIR,'temp')
 STATIC_DIR = os.path.join(BASE_DIR,'static')
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'testapp',
     'masters',
+    'per_info_mng',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'usermodform.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,TEMPLATE_DIR1],
+        'DIRS': [TEMPLATE_DIR,TEMPLATE_DIR1,TEMPLATE_DIR2],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

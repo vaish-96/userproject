@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <form action="/index/update/{{ personal.id }}" method="post">
+    {% csrf_token %}
+    <label for="employee_id">Employee ID<input type="number" name="employee_id" value="{{personal.employee_id}}" placeholder="{{employee_id.name}}"></label>
+    <label for="first_name">Name<input type="text" name="first_name" value="{{persoanl.first_name}}" placeholder="{{personal.first_name}}"></label>
+    <label for="nationality">Nationality<input type="text" name="nationality" value="{{persoanl.nationality}}" placeholder="{{personal.nationality}}"></label>
+    <input type="Submit" value="Save">
+  </form>
+  </body>
+</html>

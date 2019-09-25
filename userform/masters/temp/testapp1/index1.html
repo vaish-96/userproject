@@ -9,7 +9,7 @@
     <form action="create/" method="post">
       {% csrf_token %}
       <label for="name">Name:<input type="text" name="name" id="name"></label>
-      <label for="jobtitle">Job Title:<input type="text" name="jobtitle" id="jobtitle"></label>
+      <label for="jobtitle">Job Detail:<input type="text" name="jobtitle" id="jobtitle"></label>
       <label for="jobdescription">Job Description:<input type="text" name="jobdescription" id="jobdescription"></label>
       <input type="Submit" value="Create">
     </form>
@@ -18,7 +18,7 @@
       <thead>
         <tr>
         <th>Name</th>
-        <th>Job Title</th>
+        <th>Job Detail</th>
         <th>Job Description</th>
         <th>Created at</th>
         <th>Updated at</th>

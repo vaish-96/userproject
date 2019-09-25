@@ -7,7 +7,6 @@ urlpatterns = [
 
     path('',views.index1,name='master'),
     path('form/',views.form,name='form'),
-    path('emp/',views.employee,name='employee'),
     path('edit/<id>',views.edit,name='edit'),
     path('create/',views.create,name='create'),
     path('update/<id>',views.update,name='update'),
